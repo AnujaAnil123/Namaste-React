@@ -1,3 +1,270 @@
 #heading {
    color: blueviolet 
 }
+#heading2 {
+   color:blue;
+   font-size: 40px;
+}
+/* Container for header */
+.header {
+   display: flex;
+   justify-content: space-between; /* Spread items across the header */
+   align-items: center; /* Vertically align items */
+   padding: 20px;
+   background-color: #ee880b; /* Dark background for the header */
+   color: white; /* Text color */
+   border-radius: 10px;
+}
+
+/* Styling for the logo */
+.logo img {
+   height: 50px; /* Set the logo image height */
+   width: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for the navigation items */
+.navItems ul {
+   list-style: none; /* Remove default list bullets */
+   display: flex; /* Horizontal layout */
+   gap: 20px; /* Spacing between items */
+   margin: 0;
+   padding: 0;
+}
+
+/* Navigation links */
+.navItems li {
+   cursor: pointer;
+   font-size: 16px;
+   transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.navItems li:hover {
+   color: #ff6347; /* Change color on hover */
+}
+
+/* Styling for the LogIn button */
+.navItems button {
+   background-color: #4CAF50; /* Green background */
+   color: white; /* White text color */
+   border: none; /* Remove border */
+   padding: 10px 20px; /* Padding inside the button */
+   font-size: 16px;
+   border-radius: 5px; /* Rounded corners */
+   cursor: pointer; /* Pointer cursor on hover */
+   transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+}
+
+.navItems button:hover {
+   background-color: #45a049; /* Darker green on hover */
+   transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.navItems button:active {
+   background-color: #388e3c; /* Even darker green on click */
+   transform: translateY(0); /* Reset lift effect */
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+   .header {
+       flex-direction: column; /* Stack items vertically */
+       align-items: flex-start; /* Align to the left */
+   }
+
+   .navItems ul {
+       flex-direction: column; /* Stack nav items vertically */
+       gap: 10px; /* Reduce gap between items */
+   }
+
+   .logo img {
+       height: 40px; /* Smaller logo on smaller screens */
+   }
+}
+
+.search {
+   font-size: 25px;
+   font-weight: bold;
+   margin: 10px 10px;
+}
+.res-card {
+   border: 0px solid rgb(43, 39, 39); /* Ensure border color is clear */
+   width: 200px; /* Slightly wider for better content fit */
+   height: auto; /* Allow height to adjust dynamically */
+   border-radius: 8px; /* Slightly increased border radius for a smoother look */
+   box-shadow: 4px 4px 10px rgba(71, 66, 71, 0.2); /* Subtle and more modern shadow */
+   margin: 10px; /* Balanced spacing between cards */
+   overflow: hidden; /* Ensure child content stays within bounds */
+   background-color: #fff; /* Add a clean background color */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animations */
+}
+
+/* Add hover effect */
+.res-card:hover {
+   transform: translateY(-5px); /* Slight lift on hover */
+   box-shadow: 6px 6px 15px rgba(71, 66, 71, 0.3); /* Enhanced shadow on hover */
+   cursor: pointer; /* Indicate interactivity */
+
+  
+   
+}
+.res-card > img {
+   height: 200px; /* Set a fixed height for consistent image display */
+   width: 100%; /* Set a fixed width to maintain aspect ratio */
+   margin: 1px auto; /* Center the image horizontally */
+   display: block; /* Ensure the image is treated as a block element */
+   border-radius: 8px; /* Add rounded corners for a modern look */
+   object-fit: cover; /* Ensure the image fills the space without distortion */
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+   transition: transform 0.3s ease; /* Smooth animation on hover */
+}
+
+/* Hover effect for the image */
+.res-card > img:hover {
+   transform: scale(1.05); /* Slight zoom-in effect */
+   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.body-container {
+   display: flex;
+   flex-wrap:wrap;
+   padding:10px 10px;
+   
+   
+}
+
+.filter-btn {
+   margin:10px;
+   cursor: pointer;
+}
+/* Container styling */
+.shimmer-container {
+   display: flex;
+   flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+   justify-content: center; /* Center the shimmer cards */
+   gap: 20px; /* Add consistent spacing between cards */
+   padding: 20px; /* Add padding around the container */
+}
+
+/* Shimmer card styling */
+.shimmer-card {
+   width: 200px;
+   height: 400px;
+   background-color: #e0e0e0; /* Light grey for a cleaner look */
+   border-radius: 8px; /* Rounded corners for a modern style */
+   overflow: hidden; /* Prevent animation overflow */
+   position: relative; /* For shimmer animation positioning */
+}
+
+/* Shimmer animation effect */
+.shimmer-card::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -100%; /* Start shimmer outside the card */
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+       to right,
+       #e0e0e0 0%,
+       #f5f5f5 50%,
+       #e0e0e0 100%
+   ); /* Shimmer gradient */
+   animation: shimmer 1.5s infinite; /* Continuous shimmer animation */
+}
+
+/* Keyframes for shimmer animation */
+@keyframes shimmer {
+   0% {
+       transform: translateX(-100%);
+   }
+   100% {
+       transform: translateX(100%);
+   }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+   .shimmer-card {
+       width: 150px; /* Smaller width for mobile screens */
+       height: 300px; /* Adjust height for smaller screens */
+   }
+}
+
+@media (max-width: 768px) {
+   .res-card > img {
+       height: 150px; /* Adjusted height for smaller screens */
+   }
+}
+@media (max-width: 768px) {
+   .res-card {
+       width: 100%; /* Full width on smaller screens */
+       margin: 8px 0; /* Adjust spacing for smaller viewports */
+   }
+}
+button {
+   background-color: #4CAF50; /* Green background */
+   color: white; /* White text color */
+   border: none; /* Remove default border */
+   padding: 10px 20px; /* Add padding around text */
+   text-align: center; /* Center the text */
+   text-decoration: none; /* Remove text underline */
+   display: inline-block; /* Display as inline-block */
+   font-size: 16px; /* Text size */
+   border-radius: 5px; /* Rounded corners */
+   cursor: pointer; /* Change cursor to pointer on hover */
+   transition: background-color 0.3s, transform 0.3s; /* Smooth transition on hover */
+ }
+ 
+ button:hover {
+   background-color: #45a049; /* Darker green when hovered */
+   transform: translateY(-2px); /* Slight lift effect */
+ }
+ 
+ button:focus {
+   outline: none; /* Remove focus outline */
+ }
+ 
+ button:active {
+   background-color: #388e3c; /* Even darker green when clicked */
+   transform: translateY(0); /* Return to original position on click */
+ }
+ .filter {
+   display: flex;
+   margin-top:10px;
+   justify-content: space-between;
+ }
+ .search-box {
+   border: 1px solid rgb(96, 93, 93); /* Light gray border */
+   border-radius: 5px; /* Rounded corners */
+   padding: 2px; /* Add space inside the box */
+   width: 300px; /* Full width for responsive design */
+   max-width: 400px; /* Limit maximum width */
+   font-size: 16px; /* Comfortable text size */
+   outline: none; /* Remove default focus outline */
+   transition: box-shadow 0.3s ease; /* Smooth focus transition */
+   
+   
+ }
+ 
+ /* Add hover effect */
+ .search-box:hover {
+   border-color: rgb(60, 60, 60); /* Darken border on hover */
+ }
+ 
+ /* Add focus effect */
+ .search-box:focus {
+   box-shadow: 0 0 5px rgba(96, 93, 93, 0.8); /* Highlight on focus */
+   border-color: rgb(60, 60, 60); /* Match border to hover effect */
+ }
+ .search {
+   display: flex;
+   width:auto;
+   
+ }
+ /* Placeholder styling */
+ .search-box::placeholder {
+   color: rgb(150, 150, 150); /* Light gray placeholder text */
+   font-style: italic; /* Optional: italicize placeholder text */
+ }
+ 
+ 
